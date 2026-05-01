@@ -1,8 +1,27 @@
 # cf-worker-tg-dl-bot
 部署在 cloudflare worker 中的 telegram bot 收到 http url 后 下载 以文件形式回复 telegram 消息
 
+# 部署
 新建 worker, 修改代码  
 <img width="1144" height="201" alt="image" src="https://github.com/user-attachments/assets/6de99605-e661-41bd-b07e-04de79f75d16" />
 
 访问 worker 的 域名 后面跟上 `/webhook` 来注册webhook, 如  
 `https://green-c943.crazypeace.workers.dev/webhook`
+
+# 开发过程
+```
+在 cloudflare 的 worker 中运行一个bot
+bot token
+1234567890:AAHkMpXv2nQrWsYd8bJtLfCeUo9GiN1KmZw
+
+功能是, bot 收到telegram 消息时, 把消息内容识为 http url, 访问后, 将内容以文件形式回复telegram 消息.
+```
+
+```
+注册 Webhook 的过程, 优化为访问这个 worker 的 url 后面跟上  webhook, 如
+https://green-c943.crazypeace.workers.dev/webhook
+```
+
+```
+set webhook 是不是要传入一个秘密字符串?
+```
